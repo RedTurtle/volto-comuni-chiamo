@@ -19,13 +19,10 @@
     "release-rc": "release-it --preRelease=rc"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-export-default-from": "7.18.10",
     "@commitlint/cli": "^17.6.7",
     "@commitlint/config-conventional": "^17.6.7",
     "@plone/scripts": "*",
     "@release-it/conventional-changelog": "^7.0.0",
-    "axios": "^1.4.0",
-    "deep-freeze": "0.0.1",
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^8.9.0",
     "eslint-config-react-app": "^7.0.1",
@@ -36,9 +33,7 @@
     "eslint-plugin-react": "^7.33.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3",
-    "jest-css-modules": "^2.1.0",
     "lint-staged": "^13.2.3",
-    "pofile": "1.0.10",
     "prettier": "^3.0.0",
     "release-it": "^16.1.3"
   },
