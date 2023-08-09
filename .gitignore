@@ -1,23 +1,10 @@
-.vscode/
-logs
-*.log
-npm-debug.log*
-.DS_Store
-
-coverage
 node_modules
+project
+addon-testing-project
+.changelog.draft
 build
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
 
-locales/*.json
-
-project/
-addon-testing-project/
-
-# Yarn 3
+# yarn 3
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -25,4 +12,3 @@ addon-testing-project/
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-
