@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { CC_PALETTE } from 'volto-comuni-chiamo/Block/colors';
 
 const View = ({ data, properties, id, path }) => {
   useEffect(() => {
@@ -7,7 +8,7 @@ const View = ({ data, properties, id, path }) => {
       targetId: 'comunichiamo',
       apiKey: data.keyWidget,
       ui: {
-        primaryColor: data.colorWidget ?? data.color,
+        primaryColor: data.colorWidget ?? checkColor(data.color),
       },
     };
     if (window && !window.hasOwnProperty('ccWidgetReportingConf')) {
@@ -24,6 +25,11 @@ const View = ({ data, properties, id, path }) => {
     //   document.body.removeChild(script);
     // };
   }, [data]);
+
+  const checkColor = (color) => {
+    const colorSelect = CC_PALETTE.filter((el) => el.name === color);
+    return colorSelect[0].code;
+  };
 
   return (
     <>

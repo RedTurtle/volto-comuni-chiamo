@@ -82,6 +82,7 @@ const Sidebar = ({ data, block, onChangeBlock }) => {
           title={intl.formatMessage(messages.color)}
           value={data.color || CC_PALETTE[0].name}
           onChange={(id, value) => {
+            console.log('color', value);
             onChangeBlock(block, {
               ...data,
               [id]: value,
