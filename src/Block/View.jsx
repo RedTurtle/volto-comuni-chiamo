@@ -8,7 +8,8 @@ const View = ({ data, properties, id, path }) => {
       targetId: 'comunichiamo',
       apiKey: data.keyWidget,
       ui: {
-        primaryColor: data.colorWidget ?? checkColor(data.color),
+        primaryColor:
+          data.colorWidget ?? checkColor(data.color || CC_PALETTE[0].name),
       },
     };
     if (window && !window.hasOwnProperty('ccWidgetReportingConf')) {

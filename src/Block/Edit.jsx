@@ -9,7 +9,7 @@ const Edit = ({ data, onChangeBlock, block, selected }) => {
     <>
       <FormattedMessage
         id="BlockFirstSave"
-        defaultMessage="Per vedere il blocco Comuni-Chiamo, devi prima salvare il contenuto."
+        defaultMessage="Per vedere il blocco Comuni-Chiamo, devi prima salvare il contenuto e ricaricare la pagina."
       ></FormattedMessage>
 
       <SidebarPortal selected={selected}>
