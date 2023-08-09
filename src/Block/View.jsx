@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const View = ({ data, properties, id, path }) => {
@@ -10,19 +10,20 @@ const View = ({ data, properties, id, path }) => {
         primaryColor: data.colorWidget ?? data.color,
       },
     };
-    window.ccWidgetReportingConf = ccWidgetReportingConf;
+    if (window && !window.hasOwnProperty('ccWidgetReportingConf')) {
+      window.ccWidgetReportingConf = ccWidgetReportingConf;
 
-    const script = document.createElement('script');
-    script.src =
-      'https://cdn-embed.comuni-chiamo.com/test/0.3.1-beta/js/main.js';
-    script.async = true;
-    document.body.appendChild(script);
+      const script = document.createElement('script');
+      script.src =
+        'https://cdn-embed.comuni-chiamo.com/test/0.3.1-beta/js/main.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
 
-    return () => {
-      delete window.ccWidgetReportingConf;
-      document.body.removeChild(script);
-    };
-  }, [data.keyWidget]);
+    // return () => {
+    //   document.body.removeChild(script);
+    // };
+  }, [data]);
 
   return (
     <>
