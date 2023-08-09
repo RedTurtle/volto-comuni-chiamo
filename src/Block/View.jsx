@@ -1,38 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
-import { Helmet } from '@plone/volto/helpers';
 
 const View = ({ data, properties, id, path }) => {
-  //console.log('data', data);
-
-  // useEffect(() => {
-  //   console.log('render');
-  //   comunichiamoScript(data.keyWidget, '');
-  //   const script = document.createElement('script');
-
-  //   script.src =
-  //     'https://cdn-embed.comuni-chiamo.com/test/0.3.1-beta/js/main.js';
-  //   script.async = true;
-
-  //   document.body.appendChild(script);
-  // }, []);
-
   useEffect(() => {
     const ccWidgetReportingConf = {
       targetId: 'comunichiamo',
       apiKey: data.keyWidget,
+      ui: {
+        primaryColor: data.colorWidget ?? data.color,
+      },
     };
-
     window.ccWidgetReportingConf = ccWidgetReportingConf;
 
     const script = document.createElement('script');
-
     script.src =
       'https://cdn-embed.comuni-chiamo.com/test/0.3.1-beta/js/main.js';
     script.async = true;
-
     document.body.appendChild(script);
+
     return () => {
       delete window.ccWidgetReportingConf;
       document.body.removeChild(script);
@@ -42,6 +27,7 @@ const View = ({ data, properties, id, path }) => {
   return (
     <>
       <div className="block comuni-chiamo">
+        {data.title && <h2 className="mb-4">{data.title}</h2>}
         <div id="comunichiamo"></div>
       </div>
     </>

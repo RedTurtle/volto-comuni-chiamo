@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { SidebarPortal } from '@plone/volto/components';
-import Sidebar from './Sidebar';
-
-import { getBaseUrl } from '@plone/volto/helpers';
+import Sidebar from 'volto-comuni-chiamo/Block/Sidebar';
 
 const Edit = ({ data, onChangeBlock, block, selected }) => {
   return (
@@ -12,13 +10,7 @@ const Edit = ({ data, onChangeBlock, block, selected }) => {
       <FormattedMessage
         id="BlockFirstSave"
         defaultMessage="Per vedere il blocco Comuni-Chiamo, devi prima salvare il contenuto."
-      >
-        {/* {(message) => (
-              <div className="public-ui">
-                <div className="ui message warning">{message}</div>
-              </div>
-            )} */}
-      </FormattedMessage>
+      ></FormattedMessage>
 
       <SidebarPortal selected={selected}>
         <Sidebar data={data} block={block} onChangeBlock={onChangeBlock} />
@@ -29,12 +21,8 @@ const Edit = ({ data, onChangeBlock, block, selected }) => {
 
 Edit.propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
-  index: PropTypes.number.isRequired,
   selected: PropTypes.bool.isRequired,
   block: PropTypes.string.isRequired,
-  onSelectBlock: PropTypes.func.isRequired,
-  items: PropTypes.arrayOf(PropTypes.any),
-  properties: PropTypes.objectOf(PropTypes.any).isRequired,
   pathname: PropTypes.string.isRequired,
 };
 

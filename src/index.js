@@ -1,13 +1,11 @@
-import logoCC from '@plone/volto/icons/discussion.svg';
-import View from 'volto-comuni-chiamo/Block/View'; // TO DO: da sostituire
-import Edit from 'volto-comuni-chiamo/Block/Edit'; // TO DO: da sostituire
-// import DefaultRSSTemplate from './Templates/DefaultRssTemplate';
-// export { getRSSMixerData } from './actions';
+import iconCC from '@plone/volto/icons/discussion.svg';
+import View from 'volto-comuni-chiamo/Block/View';
+import Edit from 'volto-comuni-chiamo/Block/Edit';
 
 export const comunichiamoBlock = {
   id: 'comunichiamoBlock',
   title: 'Blocco Comuni-Chiamo',
-  icon: logoCC,
+  icon: iconCC,
   group: 'common',
   view: View,
   edit: Edit,
@@ -17,9 +15,6 @@ export const comunichiamoBlock = {
     addPermission: [],
     view: [],
   },
-  // templates: {
-  //   default: { label: 'Default template', template: DefaultRSSTemplate },
-  // },
   sidebarTab: 1,
 };
 
@@ -28,11 +23,6 @@ export default function applyConfig(config) {
     ...config.blocks.blocksConfig,
     comunichiamoBlock,
   };
-
-  // config.addonReducers = {
-  //   ...config.addonReducers,
-  //   rssMixerData,
-  // };
 
   return config;
 }

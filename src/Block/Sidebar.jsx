@@ -5,6 +5,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { TextWidget } from '@plone/volto/components';
 import { ColorListWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
 import { CC_PALETTE } from 'volto-comuni-chiamo/Block/colors';
+/* STYLE */
 import 'volto-comuni-chiamo/Block/sidebar.css';
 
 const messages = defineMessages({
@@ -44,7 +45,7 @@ const messages = defineMessages({
   },
 });
 
-const Sidebar = ({ data, block, onChangeBlock, required = false }) => {
+const Sidebar = ({ data, block, onChangeBlock }) => {
   const intl = useIntl();
 
   return (
@@ -55,9 +56,9 @@ const Sidebar = ({ data, block, onChangeBlock, required = false }) => {
 
       <Segment className="ui form">
         <TextWidget
-          id="blockTitle"
+          id="title"
           title={intl.formatMessage(messages.title)}
-          value={data.blockTitle}
+          value={data.title}
           onChange={(name, value) => {
             onChangeBlock(block, {
               ...data,
@@ -109,7 +110,6 @@ Sidebar.propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
   block: PropTypes.string.isRequired,
   onChangeBlock: PropTypes.func.isRequired,
-  required: PropTypes.bool,
 };
 
 export default Sidebar;
