@@ -3,7 +3,17 @@ import PropTypes from 'prop-types';
 import { CC_PALETTE } from 'volto-comuni-chiamo/Block/colors';
 
 const View = ({ data, properties, id, path }) => {
+  const [scriptLoaded, setScriptLoaded] = React.useState(null);
   useEffect(() => {
+    const script = document.createElement('script');
+    script.src =
+      'https://cdn-embed.comuni-chiamo.com/test/0.3.1-beta/js/main.min.js';
+    script.async = true;
+
+    const checkColor = (color) => {
+      const colorSelect = CC_PALETTE.filter((el) => el.name === color);
+      return colorSelect[0].code;
+    };
     const ccWidgetReportingConf = {
       targetId: 'comunichiamo',
       apiKey: data.keyWidget,
@@ -12,33 +22,21 @@ const View = ({ data, properties, id, path }) => {
           data.colorWidget ?? checkColor(data.color || CC_PALETTE[0].name),
       },
     };
-    if (window && !window.hasOwnProperty('ccWidgetReportingConf')) {
-      window.ccWidgetReportingConf = ccWidgetReportingConf;
+    window.ccWidgetReportingConf = ccWidgetReportingConf;
+    document.body.appendChild(script);
+    setScriptLoaded(script);
 
-      const script = document.createElement('script');
-      script.src =
-        'https://cdn-embed.comuni-chiamo.com/test/0.3.1-beta/js/main.js';
-      script.async = true;
-      document.body.appendChild(script);
-    }
-
-    // return () => {
-    //   document.body.removeChild(script);
-    // };
-  }, [data]);
-
-  const checkColor = (color) => {
-    const colorSelect = CC_PALETTE.filter((el) => el.name === color);
-    return colorSelect[0].code;
-  };
+    return () => {
+      scriptLoaded && document.body.removeChild(scriptLoaded);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <>
-      <div className="block comuni-chiamo">
-        {data.title && <h2 className="mb-4">{data.title}</h2>}
-        <div id="comunichiamo"></div>
-      </div>
-    </>
+    <div className="block comuni-chiamo">
+      {data.title && <h2 className="mb-4">{data.title}</h2>}
+      <div id="comunichiamo"></div>
+    </div>
   );
 };
 
