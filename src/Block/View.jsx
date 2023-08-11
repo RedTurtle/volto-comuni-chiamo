@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { CC_PALETTE } from '@redturtle/volto-comuni-chiamo/Block/colors';
+import { CC_PALETTE } from 'volto-comuni-chiamo/Block/colors';
 
 const View = ({ data, properties, id, path }) => {
   useEffect(() => {

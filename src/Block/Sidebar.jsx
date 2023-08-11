@@ -4,9 +4,9 @@ import { Segment } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import { TextWidget } from '@plone/volto/components';
 import { ColorListWidget } from 'design-comuni-plone-theme/components/ItaliaTheme';
-import { CC_PALETTE } from '@redturtle/volto-comuni-chiamo/Block/colors';
+import { CC_PALETTE } from 'volto-comuni-chiamo/Block/colors';
 /* STYLE */
-import '@redturtle/volto-comuni-chiamo/Block/sidebar.css';
+import 'volto-comuni-chiamo/Block/sidebar.css';
 
 const messages = defineMessages({
   comuniChiamo: {

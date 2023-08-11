@@ -24,7 +24,7 @@ YELLOW=`tput setaf 3`
 PLONE_VERSION=6
 VOLTO_VERSION=17.0.0-alpha.22
 
-ADDON_NAME='@redturtle/volto-comuni-chiamo'
+ADDON_NAME='volto-comuni-chiamo'
 ADDON_PATH='volto-comuni-chiamo'
 COMPOSE_FILE=dockerfiles/docker-compose.yml
 ACCEPTANCE_COMPOSE=acceptance/docker-compose.yml

@@ -5,7 +5,7 @@ FROM plone/frontend-builder:${VOLTO_VERSION} as builder
 ARG ADDON_NAME
 ARG ADDON_PATH
 
-ENV THEME='@redturtle/volto-comuni-chiamo'
+ENV THEME='volto-comuni-chiamo'
 
 # Copy helper.py as /setupAddon
 COPY dockerfiles/helper.py /setupAddon
@@ -26,7 +26,7 @@ FROM plone/frontend-prod-config:${VOLTO_VERSION}
 
 LABEL maintainer="Plone Collective" \
       org.label-schema.name="ghcr.io/RedTurtle/volto-comuni-chiamo" \
-      org.label-schema.description="Volto project with @redturtle/volto-comuni-chiamo" \
+      org.label-schema.description="Volto project with volto-comuni-chiamo" \
       org.label-schema.vendor="RedTurtle"
 
 COPY --from=builder /app/ /app/
