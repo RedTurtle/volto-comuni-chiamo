@@ -1,6 +1,6 @@
 import iconCC from '@plone/volto/icons/discussion.svg';
-import View from 'volto-comuni-chiamo/Block/View';
-import Edit from 'volto-comuni-chiamo/Block/Edit';
+import View from '@redturtle/volto-comuni-chiamo/Block/View';
+import Edit from '@redturtle/volto-comuni-chiamo/Block/Edit';
 
 export const comunichiamoBlock = {
   id: 'comunichiamoBlock',

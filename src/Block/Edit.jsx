@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { SidebarPortal } from '@plone/volto/components';
-import Sidebar from 'volto-comuni-chiamo/Block/Sidebar';
+import Sidebar from '@redturtle/volto-comuni-chiamo/Block/Sidebar';
 
 const Edit = ({ data, onChangeBlock, block, selected }) => {
   return (
