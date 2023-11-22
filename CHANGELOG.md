@@ -1,5 +1,12 @@
 
 
+## [0.2.1](https://github.com/redturtle/volto-comuni-chiamo/compare/v0.2.0...v0.2.1) (2023-11-22)
+
+
+### Bug Fixes
+
+* imports with new scoped name ([e2d25e3](https://github.com/redturtle/volto-comuni-chiamo/commit/e2d25e398e288bdd4897e93d8d1673ab635e6568))
+
 ## 0.2.0 (2023-11-21)
 
 
