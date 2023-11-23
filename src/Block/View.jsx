@@ -4,7 +4,7 @@ import { CC_PALETTE } from '@redturtle/volto-comuni-chiamo/Block/colors';
 
 const View = ({ data, properties, id, path }) => {
   const src =
-    'https://cdn-embed.comuni-chiamo.com/test/0.4.0-beta/js/main.min.js';
+    'https://cdn-embed.comuni-chiamo.com/prod/v1/latest/js/main.min.js';
 
   // src: https://stackoverflow.com/a/28002292
   const getScript = (source, callback) => {
