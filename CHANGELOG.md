@@ -1,5 +1,16 @@
 
 
+## [1.0.0](https://github.com/redturtle/volto-comuni-chiamo/compare/v0.2.1...v1.0.0) (2023-11-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* added new prod script
+
+### Features
+
+* added new prod script ([ff61e65](https://github.com/redturtle/volto-comuni-chiamo/commit/ff61e655589ac4d5f5672baf70a690bbdd4a6ac5))
+
 ## [0.2.1](https://github.com/redturtle/volto-comuni-chiamo/compare/v0.2.0...v0.2.1) (2023-11-22)
 
 
