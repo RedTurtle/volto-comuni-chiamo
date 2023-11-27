@@ -2,15 +2,29 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { CC_PALETTE } from '@redturtle/volto-comuni-chiamo/Block/colors';
 
+const checkColor = (color) => {
+  const colorSelect = CC_PALETTE.filter((el) => el.name === color);
+  return colorSelect[0].code;
+};
+
+const SCRIPT_ID = 'comuni-chiamo-script';
+const WIDGET_ID = 'comunichiamo';
+
 const View = ({ data, properties, id, path }) => {
   const src =
     'https://cdn-embed.comuni-chiamo.com/prod/v1/latest/js/main.min.js';
 
   // src: https://stackoverflow.com/a/28002292
   const getScript = (source, callback) => {
-    var script = document.createElement('script');
-    var prior = document.getElementsByTagName('script')[0];
+    if (document.getElementById(SCRIPT_ID)) {
+      if (callback) callback();
+      return;
+    }
+
+    let script = document.createElement('script');
+    const prior = document.getElementsByTagName('script')[0];
     script.async = 1;
+    script.id = SCRIPT_ID;
 
     script.onload = script.onreadystatechange = (_, isAbort) => {
       if (
@@ -29,13 +43,8 @@ const View = ({ data, properties, id, path }) => {
   };
 
   useEffect(() => {
-    const checkColor = (color) => {
-      const colorSelect = CC_PALETTE.filter((el) => el.name === color);
-      return colorSelect[0].code;
-    };
-
     const ccWidgetReportingConf = {
-      targetId: 'comunichiamo',
+      targetId: WIDGET_ID,
       apiKey: data.keyWidget,
       ui: {
         primaryColor:
@@ -46,17 +55,23 @@ const View = ({ data, properties, id, path }) => {
     window.ccWidgetReportingConf = ccWidgetReportingConf;
 
     getScript(src, () => {
-      window.ccWidgetReporting.init();
+      const widget = document.getElementById(WIDGET_ID);
+      if (
+        widget &&
+        widget.getAttribute('data-loaded') !== 'true' &&
+        window.ccWidgetReporting
+      ) {
+        widget.setAttribute('data-loaded', 'true');
+        window.ccWidgetReporting.init();
+      }
     });
   }, [data.color, data.colorWidget, data.keyWidget]);
 
   return (
-    <>
-      <div className="block comuni-chiamo">
-        {data.title && <h2 className="mb-4">{data.title}</h2>}
-        <div id="comunichiamo"></div>
-      </div>
-    </>
+    <div className="block comuni-chiamo">
+      {data.title && <h2 className="mb-4">{data.title}</h2>}
+      <div id={WIDGET_ID}></div>
+    </div>
   );
 };
 

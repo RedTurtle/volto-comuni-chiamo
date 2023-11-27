@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Segment } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
@@ -82,7 +81,6 @@ const Sidebar = ({ data, block, onChangeBlock }) => {
           title={intl.formatMessage(messages.color)}
           value={data.color || CC_PALETTE[0].name}
           onChange={(id, value) => {
-            console.log('color', value);
             onChangeBlock(block, {
               ...data,
               [id]: value,
