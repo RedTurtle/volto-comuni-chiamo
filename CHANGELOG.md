@@ -1,5 +1,12 @@
 
 
+## [1.0.1](https://github.com/redturtle/volto-comuni-chiamo/compare/v1.0.0...v1.0.1) (2023-11-27)
+
+
+### Bug Fixes
+
+* double loading of script and double init ([fd7426b](https://github.com/redturtle/volto-comuni-chiamo/commit/fd7426b5be22ed3452c3254d1e9b2bc672a8f0a8))
+
 ## [1.0.0](https://github.com/redturtle/volto-comuni-chiamo/compare/v0.2.1...v1.0.0) (2023-11-23)
 
 
