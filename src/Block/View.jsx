@@ -50,6 +50,13 @@ const View = ({ data, properties, id, path }) => {
         primaryColor:
           data.colorWidget ?? checkColor(data.color || CC_PALETTE[0].name),
       },
+      labels: {
+        auth: {
+          title: data.labelsAuthTitle,
+          subtitle: data.labelsAuthSubtitle,
+          formTitle: data.labelsAuthFormTitle,
+        },
+      },
       autoInit: false,
     };
     window.ccWidgetReportingConf = ccWidgetReportingConf;
@@ -65,7 +72,14 @@ const View = ({ data, properties, id, path }) => {
         window.ccWidgetReporting.init();
       }
     });
-  }, [data.color, data.colorWidget, data.keyWidget]);
+  }, [
+    data.color,
+    data.colorWidget,
+    data.keyWidget,
+    data.labelsAuthTitle,
+    data.labelsAuthSubtitle,
+    data.labelsAuthFormTitle,
+  ]);
 
   return (
     <div className="block comuni-chiamo">

@@ -42,6 +42,33 @@ const messages = defineMessages({
     defaultMessage:
       'Per vedere il blocco Comuni-Chiamo, devi prima salvare il contenuto.',
   },
+  labelsAuthTitle: {
+    id: 'comuni-chiamo-labelsAuthTitle',
+    defaultMessage: 'Titolo della pagina iniziale',
+  },
+  labelsAuthTitleDescription: {
+    id: 'comuni-chiamo-labelsAuthTitleDescription',
+    defaultMessage:
+      'Relativo alla pagina iniziale in cui vengono chiesti i dati dell\'utente. Il valore predefinito è "Autenticazione".',
+  },
+  labelsAuthSubtitle: {
+    id: 'comuni-chiamo-labelsAuthSubtitle',
+    defaultMessage: 'Sottotitolo della pagina iniziale',
+  },
+  labelsAuthSubtitleDescription: {
+    id: 'comuni-chiamo-labelsAuthSubtitleDescription',
+    defaultMessage:
+      'Relativo alla pagina iniziale in cui vengono chiesti i dati dell\'utente. Il valore predefinito è "Compila i tuoi dati per la segnalazione".',
+  },
+  labelsAuthFormTitle: {
+    id: 'comuni-chiamo-labelsAuthFormTitle',
+    defaultMessage: 'Titoletto sopra i form della pagina iniziale',
+  },
+  labelsAuthFormTitleDescription: {
+    id: 'comuni-chiamo-labelsAuthFormTitleDescription',
+    defaultMessage:
+      'Relativo alla pagina iniziale in cui vengono chiesti i dati dell\'utente. Il valore predefinito è "Aiutaci a capire chi sei".',
+  },
 });
 
 const Sidebar = ({ data, block, onChangeBlock }) => {
@@ -93,6 +120,46 @@ const Sidebar = ({ data, block, onChangeBlock }) => {
           title={intl.formatMessage(messages.codColor)}
           description={intl.formatMessage(messages.codColorDescription)}
           value={data.colorWidget}
+          onChange={(name, value) => {
+            onChangeBlock(block, {
+              ...data,
+              [name]: value,
+            });
+          }}
+        />
+        <TextWidget
+          id="labelsAuthTitle"
+          title={intl.formatMessage(messages.labelsAuthTitle)}
+          description={intl.formatMessage(messages.labelsAuthTitleDescription)}
+          value={data.labelsAuthTitle}
+          onChange={(name, value) => {
+            onChangeBlock(block, {
+              ...data,
+              [name]: value,
+            });
+          }}
+        />
+        <TextWidget
+          id="labelsAuthSubtitle"
+          title={intl.formatMessage(messages.labelsAuthSubtitle)}
+          description={intl.formatMessage(
+            messages.labelsAuthSubtitleDescription,
+          )}
+          value={data.labelsAuthSubtitle}
+          onChange={(name, value) => {
+            onChangeBlock(block, {
+              ...data,
+              [name]: value,
+            });
+          }}
+        />
+        <TextWidget
+          id="labelsAuthFormTitle"
+          title={intl.formatMessage(messages.labelsAuthFormTitle)}
+          description={intl.formatMessage(
+            messages.labelsAuthFormTitleDescription,
+          )}
+          value={data.labelsAuthFormTitle}
           onChange={(name, value) => {
             onChangeBlock(block, {
               ...data,
