@@ -1,5 +1,17 @@
 
 
+## [1.1.0](https://github.com/redturtle/volto-comuni-chiamo/compare/v1.0.1...v1.1.0) (2023-12-21)
+
+
+### Features
+
+* new sidebar fields for new plugin labels ([499c495](https://github.com/redturtle/volto-comuni-chiamo/commit/499c4952cbbce13946584de228daaa1bc70d3d48))
+
+
+### Maintenance
+
+* update project babel eslint config ([bf85f43](https://github.com/redturtle/volto-comuni-chiamo/commit/bf85f43619ef8b9d0db99f3ec2da4a8fb7fea9d8))
+
 ## [1.0.1](https://github.com/redturtle/volto-comuni-chiamo/compare/v1.0.0...v1.0.1) (2023-11-27)
 
 
