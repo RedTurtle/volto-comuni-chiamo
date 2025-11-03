@@ -80,7 +80,7 @@ const Sidebar = ({ data, block, onChangeBlock }) => {
         <h2>{intl.formatMessage(messages.comuniChiamo)}</h2>
       </header>
 
-      <Segment className="ui form">
+      <Segment className="ui form comuni-chiamo-addon">
         <TextWidget
           id="title"
           title={intl.formatMessage(messages.title)}
