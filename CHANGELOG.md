@@ -1,5 +1,17 @@
 
 
+## [1.1.1](https://github.com/redturtle/volto-comuni-chiamo/compare/v1.1.0...v1.1.1) (2025-11-04)
+
+
+### Bug Fixes
+
+* limited styles on sidebar only to widget ([#3](https://github.com/redturtle/volto-comuni-chiamo/issues/3)) ([93935e5](https://github.com/redturtle/volto-comuni-chiamo/commit/93935e59207626fdb3393741f001ac32e4cc9538))
+
+
+### Maintenance
+
+* readme file updated to add instructions to use the addon ([#2](https://github.com/redturtle/volto-comuni-chiamo/issues/2)) ([3eca9df](https://github.com/redturtle/volto-comuni-chiamo/commit/3eca9df032bcacc17efc6b553d1a50e7ae234d52))
+
 ## [1.1.0](https://github.com/redturtle/volto-comuni-chiamo/compare/v1.0.1...v1.1.0) (2023-12-21)
 
 
