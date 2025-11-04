@@ -6,7 +6,7 @@ To be used with mrs-developer, see [Volto docs](https://docs.voltocms.com/custom
 
 ### How to use it
 
-1. Istall the add-on via [NPM](https://www.npmjs.com/package/@redturtle/volto-comuni-chiamo) or manually
+1. Install the add-on via [NPM](https://www.npmjs.com/package/@redturtle/volto-comuni-chiamo) or manually
 
 * package.json
 ```
@@ -23,5 +23,5 @@ To be used with mrs-developer, see [Volto docs](https://docs.voltocms.com/custom
 2. Deploy the Frontend
 3. Create a block "Blocco Comuni-Chiamo"
 4. Add the API Key in the block’s sidebar, the other options and save your changes
-5. If it work's, the block will look like this:
+5. If it works, the block will look like this:
 ![comuni-chiamo](/docs/screenshot-comuni-chiamo.png)
